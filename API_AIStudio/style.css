@@ -15,17 +15,17 @@ body {
 
 .formulario {
     border: 1px solid #7e7d7d;
-    border: 20px;
+    border-radius: 20px;
     width: 60%;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
 }
 
-.response {
+#response {
     margin: 10px auto;
     padding: 10px 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #000;
     border-radius: 5px;
     display: none;
     text-align: left;
