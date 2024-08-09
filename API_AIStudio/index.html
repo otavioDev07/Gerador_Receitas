@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Receita com Ingredientes</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Receitas</h1>
+        <div class="formulario">
+            <h3>Informe os ingredientes que quer utilizar</h3>
+            <div id="ingredients">
+                <div class="ingredient-row">
+                    <input type="text" class="ingredient ingredient-input" placeholder="Informe um ingrediente culinário...">
+                    <button class="btn-danger" onclick="removeIngrediente(this)" disabled >Excluir</button>
+                </div>
+                <div class="ingredient-row">
+                    <input type="text" class="ingredient ingredient-input" placeholder="Informe um ingrediente culinário...">
+                    <button class="btn-danger" onclick="removeIngrediente(this)" disabled >Excluir</button>
+                </div>
+                <div class="ingredient-row">
+                    <input type="text" class="ingredient ingredient-input" placeholder="Informe um ingrediente culinário...">
+                    <button class="btn-danger" onclick="removeIngrediente(this)" disabled >Excluir</button>
+                </div>
+            </div>
+            <button class="btn-primary" onclick="addIngredient()">Adicionar Ingrediente</button>
+            <button class="btn-success" onclick="submitForm()">Gerar Receita</button>
+        </div>
+        <div id="response"></div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
