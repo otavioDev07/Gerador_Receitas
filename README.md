@@ -25,6 +25,7 @@ cd projeto-gerador-receitas
 - Instale as dependências do Python:
 pip install flask flask-cors google-generativeai
 
+- Gere sua chave de API em: https://aistudio.google.com/app/u/1/apikey
 - Adicione sua chave API do Google Generative AI no arquivo app.py na linha:
 gemini.configure(api_key="SUA_CHAVE_API_AQUI")
 
