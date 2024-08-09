@@ -27,7 +27,6 @@ def make_receita():
         resposta = model.generate_content(prompt)
         print(resposta)
 
-        # Modifique aqui para retornar a string completa
         receita = '\n'.join(resposta.text.strip().split('\n'))
 
         return jsonify({"receita": receita}), 200
