@@ -15,23 +15,24 @@ def make_receita():
         ingredientes = dados.get('ingredientes')
 
         prompt = f""" 
-    Crie uma receita somente com os seguintes ingredientes: (ingredientes).
-    Apresente a receita no formato html com codificação UTF-8, sem o header,
-    com o título em hl, subtítulos em h2, tempo de preparo em parágrafo
-    acompanhado de um ícone de relógio, rendimento em porções em parágrafo
-    acompanhado de um ícone de pratos, a lista de ingredientes em lista não
-    ordenada, modo de preparo com passos em lista ordenada, sugestão para
-    servir em parágrafo.
-    """
+        Crie uma receita somente com os seguintes ingredientes: {ingredientes}.
+        Apresente a receita no formato html com codificação UTF-8, sem o header,
+        com o título em hl, subtítulos em h2, tempo de preparo em parágrafo
+        acompanhado de um ícone de relógio, rendimento em porções em parágrafo
+        acompanhado de um ícone de pratos, a lista de ingredientes em lista não
+        ordenada, modo de preparo com passos em lista ordenada, sugestão para
+        servir em parágrafo. Também forneça as medidas corretamento e também ingredientes adicionais (opcionais)
+        """
         
         resposta = model.generate_content(prompt)
         print(resposta)
 
-        receita = resposta.text.strip().split('\n')
+        # Modifique aqui para retornar a string completa
+        receita = '\n'.join(resposta.text.strip().split('\n'))
 
-        return (receita), 200
+        return jsonify({"receita": receita}), 200
     except Exception as e:
-        return jsonify({"Erro": str(e)}), 300
+        return jsonify({"Erro": str(e)}), 500
     
 
 
