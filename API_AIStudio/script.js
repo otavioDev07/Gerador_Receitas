@@ -14,7 +14,7 @@ function addIngredient() {
 
     const newInput = document.createElement('input')
     newInput.type = "text"
-    newInput.className = 'ingredient from-control ingredient-input'
+    newInput.className = 'ingredient form-control ingredient-input'
     newInput.placeholder = "Informe um ingrediente culinário..."
 
     const removeButton = document.createElement('button')
@@ -54,16 +54,15 @@ async function submitForm(){
     try {
         const response = await fetch('http://localhost:5000/receita', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }, body: JSON.stringify(data)
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify(data)
         })
         
         const result = await response.json()
 
         const responseDiv = document.getElementById('response')
-        if (result) {
-            const receita = `${result.join('')}`
+        if (result.receita) {
+            responseDiv.innerHTML = result.receita
         } else {
             responseDiv.innerHTML = `<p>Erro: ${result.Erro}</p>`
         }
@@ -74,5 +73,6 @@ async function submitForm(){
         responseDiv.style.display = 'block'
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', updateRemoveButtons)
