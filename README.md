@@ -30,7 +30,7 @@ pip install flask flask-cors google-generativeai
 gemini.configure(api_key="SUA_CHAVE_API_AQUI")
 
 - Execute a aplicação Flask:
-python app.py
+python api.py
 
 - Abra o arquivo index.html no navegador:
 Utilize um servidor local, como Live Server no VS Code, ou abra o arquivo diretamente em seu navegador.
